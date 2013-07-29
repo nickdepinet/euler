@@ -5,7 +5,7 @@ from itertools import count
 """
 
 def numFactors(x):
-	return len(filter(lambda i: x % i == 0, xrange(1, x+1)))
+	return len(filter(lambda i: x % i == 0, xrange(1, x/2+1)))+1
 def triangles():
 	for x in count(1):
 		yield sum(y for y in (xrange(0,x+1)))
