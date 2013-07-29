@@ -4,6 +4,7 @@ from time import time
 	Project Euler #12: what is the first triangle number of have over 500 divisors?
 	Author: Nick Depinet
 """
+
 def timeit(func):
 	def timeitandrun(*args, **kwargs):
 		start = time()
@@ -14,7 +15,7 @@ def timeit(func):
 	return timeitandrun
 
 def factors(x):
-	return list(chain.from_iterable(imap(lambda c: (c, x / c), filter(lambda i: x % i == 0, xrange(1, x**0.5+1)))))
+	return list(chain.from_iterable(imap(lambda c: (c, x / c), filter(lambda i: x % i == 0, xrange(1, int(x**0.5+1))))))
 def triangles():
 	for x in count(1):
 		yield sum(y for y in (xrange(0,x+1)))
