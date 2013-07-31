@@ -14,7 +14,7 @@ def timeit(func):
 	return timeitandrun
 
 @timeit
-def solve():	
-	return sorted(f for f in chain.from_iterable(imap(lambda r: (r, 600851475143 / r), ifilter(lambda x: 600851475143 % x == 0, xrange(1, int(600851475143**0.5+1))))) if not any(ifilter(lambda y: f % y == 0, xrange(2, int(f**0.5+1)))))[-1]
+def solve(n):	
+	return sorted(f for f in chain.from_iterable(imap(lambda r: (r, n / r), ifilter(lambda x: n % x == 0, xrange(1, int(n**0.5+1))))) if not any(ifilter(lambda y: f % y == 0, xrange(2, int(f**0.5+1)))))[-1]
 
-print solve()
+print solve(600851475143)
